@@ -38,7 +38,7 @@ for chap in $list; do
 		eval rm archive_$short
 	else
 		eval rm archive_$short
-		echo "Change IP address in VPN. When done, rerun this command with the extra argument:"
+		echo "Download limit reached. When ready, rerun this command with the extra argument:"
 		echo "$short"
 		exit 1;
 	fi

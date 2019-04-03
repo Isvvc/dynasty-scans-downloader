@@ -2,7 +2,7 @@
 
 **Note**: Dynasty Scans is a website that hosts manga and user-submitted content, some of which may be offensive. Only visit if you are at least 18 years of age.
 
-Dynasty Scans Downloader is a Bash script for downloading manga from the website [Dynasty Scans](https://dynasty-scans.com/)
+Dynasty Scans Downloader is a Bash script for downloading manga from the website [Dynasty Scans](https://dynasty-scans.com/).
 
 ## Usage
 
@@ -28,10 +28,10 @@ To download the chapters of [Yuru Camp](https://dynasty-scans.com/series/yurucam
 
     ../DynastyScans.sh yurucamp
 
-Assuming you reach your download limit when trying to download chapter 9, you should get this message:
+Assuming you reach your download limit when trying to download chapter 8, you should get this message:
 
-    Change IP address in VPN. When done, rerun this command with the extra argument:
-    ch09
+    Download limit reached. When ready, rerun this command with the extra argument:
+    ch08
 
 Next you would either wait until the next day or change IP address, such as with a VPN, and run the command:
 
