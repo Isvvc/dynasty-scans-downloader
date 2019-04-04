@@ -1,5 +1,20 @@
 #!/bin/bash
 
+case `uname` in
+	Darwin)
+		echo "Detected macOS. Using pcregrep"
+		grep="pcregrep"
+		;;
+	Linux)
+		echo "Detectd Linux. Using grep -P"
+		grep="grep -P"
+		;;
+	*)
+		echo "Unrecognized OS. Trying pcregrep"
+		grep="pcregrep"
+		;;
+esac
+
 printf "Downloading $1 from Dynasty Scans"
 if [ ! -z $2 ]; then
 	check=1
@@ -11,14 +26,10 @@ printf ".\n"
 
 printf "Remember to use ctrl+z, not ctrl+c, to stop the script if needed.\n\n"
 
-list=`curl -s https://dynasty-scans.com/series/$1 | pcregrep -o '(?<=href\=")[^"]*(?="\sclass\="name")'`
-
-# echo $list
-echo $check
+list=`curl -s https://dynasty-scans.com/series/$1 | $grep -o '(?<=href\=")[^"]*(?="\sclass\="name")'`
 
 for chap in $list; do
-	# eval curl -s https://dynasty-scans.com$chap | pcregrep -o '(?<=\<title\>)[^\<]*(?=\<)'
-	short=`echo $chap | pcregrep -o "(?<=$1_).*$"`
+	short=`echo $chap | $grep -o "(?<=$1_).*$"`
 	echo $short
 
 	if [ $check -eq 1 ]; then
@@ -30,7 +41,6 @@ for chap in $list; do
 		fi
 	fi
 
-	# echo $short
 	eval curl https://dynasty-scans.com$chap/download -o archive_$short
 	if [ $(wc -c < "archive_$short") -ge 1000 ]; then
 		eval mkdir $short

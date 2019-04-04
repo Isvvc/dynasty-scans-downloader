@@ -10,11 +10,12 @@ Dynasty Scans Downloader is a Bash script for downloading manga from the website
 
 This is a bash script and thus should be run on a macOS or Linux machine. There are dependencies that need to be installed.
 
-* `pcregrep`
+* pcregrep OR GNU grep
   * macOS: `brew install pcre`
-  * This could also be altered to support GNU grep by replacing every instance of `pcregrep` with `grep -P`.
-* `7zip`
+  * Linux: Linux operating systems should come with GNU grep
+* 7-Zip
   * macOS: `brew install p7zip`
+  * Archlinux: `sudo pacman -S p7zip`
 
 ### Running
 
