@@ -12,14 +12,14 @@ This is a bash script and thus should be run on a macOS or Linux machine. There 
 
 * pcregrep OR GNU grep
   * macOS: `brew install pcre`
-  * Linux: Linux operating systems should come with GNU grep
+  * Linux operating systems should come with GNU grep
 * 7-Zip
   * macOS: `brew install p7zip`
   * Archlinux: `sudo pacman -S p7zip`
 
 ### Running
 
-Run the script in the directory you want the chapters to be downloaded to with the name of the manga as seen in the URL of the page as the first command line argument. The images from each chapter will be placed in that chapter's own sub folder.
+Run the script from the directory you want the chapters to be downloaded to with the name of the manga as seen in the URL of the page as the first command line argument. The images from each chapter will be placed in that chapter's own sub folder.
 
 Dynasty Scans only allows 8 downloads per day per IP address, so once the download limit is reached, the script will stop and inform you what chapter it stopped on. When you're ready to continue downloading (either through it being the next day or you having a new IP), run the command again with the given chapter as an extra command line argument.
 
@@ -36,6 +36,6 @@ Assuming you reach your download limit when trying to download chapter 8, you sh
 
 Next you would either wait until the next day or change IP address, such as with a VPN, and run the command:
 
-    ./DynastyScans.sh yurucamp ch09
+    ./DynastyScans.sh yurucamp ch08
 
 Once completed, you can read the manga as images or use a tool such as [Kindle Comic Converter](https://kcc.iosphe.re/) to read on a Kindle.
