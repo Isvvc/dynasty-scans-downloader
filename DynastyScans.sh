@@ -34,7 +34,7 @@ for chap in $list; do
 
 	if [ $check -eq 1 ]; then
 		if [ "$short" = "$2" ]; then
-			check=false
+			check=0
 		else
 			echo "Skipping"
 			continue
